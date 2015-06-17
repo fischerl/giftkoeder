@@ -20,9 +20,6 @@
 		551913F31B2F4D43005FA4B2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E81B2F4D43005FA4B2 /* StoreKit.framework */; };
 		551913F41B2F4D43005FA4B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E91B2F4D43005FA4B2 /* SystemConfiguration.framework */; };
 		551913F71B2F50BD005FA4B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913F61B2F50BD005FA4B2 /* CoreData.framework */; };
-		551913F91B2F5118005FA4B2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913F81B2F5118005FA4B2 /* Parse.framework */; };
-		551914001B2F516F005FA4B2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913FB1B2F516F005FA4B2 /* ParseCrashReporting.framework */; };
-		551914011B2F516F005FA4B2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913FC1B2F516F005FA4B2 /* ParseUI.framework */; };
 		552A48D11B30A534004041EC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48CF1B30A4D1004041EC /* Accounts.framework */; };
 		552A48D21B30A53E004041EC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48CD1B30A4C9004041EC /* Social.framework */; };
 		552A48D41B30A554004041EC /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48D31B30A554004041EC /* GoogleMaps.framework */; };
@@ -38,6 +35,7 @@
 		55E298411B2F38BE00FAAB41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E298401B2F38BE00FAAB41 /* SettingsViewController.swift */; };
 		55E298431B2F3A9500FAAB41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E298421B2F3A9500FAAB41 /* Images.xcassets */; };
 		55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EDC6941B30A2CF0023F8C1 /* libc++.dylib */; };
+		8477578F1B319ECE00F235A8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DD1B2F4C97005FA4B2 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,11 +104,9 @@
 				552A48D21B30A53E004041EC /* Social.framework in Frameworks */,
 				552A48D11B30A534004041EC /* Accounts.framework in Frameworks */,
 				55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */,
-				551914001B2F516F005FA4B2 /* ParseCrashReporting.framework in Frameworks */,
-				551914011B2F516F005FA4B2 /* ParseUI.framework in Frameworks */,
-				551913F91B2F5118005FA4B2 /* Parse.framework in Frameworks */,
 				551913F71B2F50BD005FA4B2 /* CoreData.framework in Frameworks */,
 				551913EA1B2F4D43005FA4B2 /* AudioToolbox.framework in Frameworks */,
+				8477578F1B319ECE00F235A8 /* Parse.framework in Frameworks */,
 				551913EB1B2F4D43005FA4B2 /* CFNetwork.framework in Frameworks */,
 				551913EC1B2F4D43005FA4B2 /* CoreGraphics.framework in Frameworks */,
 				551913ED1B2F4D43005FA4B2 /* CoreLocation.framework in Frameworks */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5515B5881B319BDE007AEE71 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5515B5871B319BDE007AEE71 /* Bolts.framework */; };
 		551913EA1B2F4D43005FA4B2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DF1B2F4D43005FA4B2 /* AudioToolbox.framework */; };
 		551913EB1B2F4D43005FA4B2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E01B2F4D43005FA4B2 /* CFNetwork.framework */; };
 		551913EC1B2F4D43005FA4B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E11B2F4D43005FA4B2 /* CoreGraphics.framework */; };
@@ -20,7 +21,6 @@
 		551913F41B2F4D43005FA4B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E91B2F4D43005FA4B2 /* SystemConfiguration.framework */; };
 		551913F71B2F50BD005FA4B2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913F61B2F50BD005FA4B2 /* CoreData.framework */; };
 		551913F91B2F5118005FA4B2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913F81B2F5118005FA4B2 /* Parse.framework */; };
-		551913FF1B2F516F005FA4B2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913FA1B2F516F005FA4B2 /* Bolts.framework */; };
 		551914001B2F516F005FA4B2 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913FB1B2F516F005FA4B2 /* ParseCrashReporting.framework */; };
 		551914011B2F516F005FA4B2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913FC1B2F516F005FA4B2 /* ParseUI.framework */; };
 		552A48D11B30A534004041EC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48CF1B30A4D1004041EC /* Accounts.framework */; };
@@ -51,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5515B5871B319BDE007AEE71 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		551913DD1B2F4C97005FA4B2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		551913DF1B2F4D43005FA4B2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		551913E01B2F4D43005FA4B2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -99,12 +100,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5515B5881B319BDE007AEE71 /* Bolts.framework in Frameworks */,
 				552A48D61B30A599004041EC /* libstdc++.6.dylib in Frameworks */,
 				552A48D41B30A554004041EC /* GoogleMaps.framework in Frameworks */,
 				552A48D21B30A53E004041EC /* Social.framework in Frameworks */,
 				552A48D11B30A534004041EC /* Accounts.framework in Frameworks */,
 				55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */,
-				551913FF1B2F516F005FA4B2 /* Bolts.framework in Frameworks */,
 				551914001B2F516F005FA4B2 /* ParseCrashReporting.framework in Frameworks */,
 				551914011B2F516F005FA4B2 /* ParseUI.framework in Frameworks */,
 				551913F91B2F5118005FA4B2 /* Parse.framework in Frameworks */,
@@ -145,6 +146,7 @@
 		551913F51B2F4D75005FA4B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5515B5871B319BDE007AEE71 /* Bolts.framework */,
 				552A48D51B30A599004041EC /* libstdc++.6.dylib */,
 				552A48D31B30A554004041EC /* GoogleMaps.framework */,
 				552A48CF1B30A4D1004041EC /* Accounts.framework */,

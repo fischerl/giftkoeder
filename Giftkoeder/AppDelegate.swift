@@ -16,21 +16,37 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
- 
+        
         // Parse
         Parse.enableLocalDatastore()
         Parse.setApplicationId("UQoNQ5lfQ4qJ57ky7MGFpjJc1LpgJeLnOKCRce5b",
             clientKey: "dawBGOtkcLk57ETJ8kdLSrbwp0gUcOLpTXIYoVd8")
         
+        
+        
         // Google Maps
         GMSServices.provideAPIKey("AIzaSyBXbzaF43g7eXL4qAUU4KDDfje3Talcl9Y")
         
+        
+        Locations.sharedLocations
+        
+        
         return true
+
+        
     }
+    
+
+    
+
+
+    
 
     func applicationWillResignActive(application: UIApplication)
     {
@@ -44,6 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication)
     {
+        
+       
 
     }
 

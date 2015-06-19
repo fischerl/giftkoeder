@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KGk-i7-Jjw" customClass="LocationCell" customModule="Giftkoeder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQS-ns-R01">
+                        <rect key="frame" x="62" y="11" width="71" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rkm-sI-EOG">
+                        <rect key="frame" x="-1" y="0.0" width="50" height="45"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-uy-tVM">
+                        <rect key="frame" x="219" y="12" width="91" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rkm-sI-EOG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JUd-QU-rKn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="d7J-uy-tVM" secondAttribute="trailing" constant="5" id="M1R-Jz-9wu"/>
+                    <constraint firstItem="rkm-sI-EOG" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="m1O-Wl-4xN"/>
+                    <constraint firstItem="yQS-ns-R01" firstAttribute="leading" secondItem="rkm-sI-EOG" secondAttribute="leading" id="yJG-8Z-e0i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="category" destination="yQS-ns-R01" id="qTz-mn-9mg"/>
+                <outlet property="date" destination="d7J-uy-tVM" id="kne-RB-bsx"/>
+                <outlet property="icon" destination="rkm-sI-EOG" id="lWl-9e-30n"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

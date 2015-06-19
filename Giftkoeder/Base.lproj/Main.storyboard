@@ -58,7 +58,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Karte" image="map" id="uqQ-SX-x11"/>
                     <connections>
-                        <outlet property="mapView" destination="gVb-cO-qFX" id="46u-w8-kQd"/>
+                        <outlet property="googleMap" destination="gVb-cO-qFX" id="vNa-vJ-CwE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSu-QJ-maw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,20 +77,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Listenansicht" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O29-KI-wWe">
-                                <rect key="frame" x="109" y="199" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kLb-ya-7jk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fbc-Cj-ezu" customClass="LocationCell" customModule="Giftkoeder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbc-Cj-ezu" id="pxK-Cw-whe">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cRt-sh-b11" id="UhN-bl-hf9"/>
+                                    <outlet property="delegate" destination="cRt-sh-b11" id="7m5-XL-5TL"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Liste" image="list" id="auY-nQ-zYg"/>
+                    <connections>
+                        <outlet property="listView" destination="kLb-ya-7jk" id="BZC-mj-XDj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJl-j8-LAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="533.45070422535207"/>
+            <point key="canvasLocation" x="-135" y="533"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="27l-Wu-QSu">
@@ -249,6 +264,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-Mg-zMH">
+                                <rect key="frame" x="63" y="80" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amC-h0-gcE">
+                                <rect key="frame" x="184" y="80" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -268,6 +293,8 @@
                     <connections>
                         <outlet property="category" destination="WD1-JD-dxt" id="ccM-cN-1gA"/>
                         <outlet property="descr" destination="zyB-Rs-Wfn" id="jVg-4L-ocL"/>
+                        <outlet property="lat" destination="jTh-Mg-zMH" id="wpJ-eH-psK"/>
+                        <outlet property="long" destination="amC-h0-gcE" id="GDT-5g-Gao"/>
                         <outlet property="position" destination="nQk-jT-GNx" id="NVT-Xh-bvg"/>
                         <outlet property="test" destination="v4y-de-0J0" id="gbw-xd-eqS"/>
                     </connections>

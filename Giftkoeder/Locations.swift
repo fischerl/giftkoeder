@@ -39,9 +39,10 @@ class Locations
             let long = object["place"]!!.longitude as Double
             let type = object["type"]! as! String
             let locationId = object.objectId!! as String
+            let date = object.createdAt!! as NSDate
             
             
-            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId)
+            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId, date:date)
             list.append(loc)
             
         }
@@ -68,9 +69,10 @@ class Locations
             let long = object["place"]!!.longitude as Double
             let type = object["type"]! as! String
             let locationId = object.objectId!! as String
+            let date = object.createdAt!! as NSDate
             
             
-            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId)
+            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId, date:date)
             list.append(loc)
             
         }

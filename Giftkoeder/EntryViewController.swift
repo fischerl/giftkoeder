@@ -33,6 +33,11 @@ class EntryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
     @IBAction func saveEntry(sender: UIButton) {
         var entry = PFObject(className: "Warnings")
         entry["place"] = PFGeoPoint(latitude: (lat.text! as NSString).doubleValue,longitude: (long.text! as NSString).doubleValue)

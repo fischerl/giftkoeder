@@ -24,31 +24,19 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.cameraWithLatitude(48.0999311,
             longitude:11.5181916, zoom:12)
         googleMap.camera = camera
-        
-//        print("Update in viewDidLoad")
-//        Locations.sharedLocations.updateLocations()
-        
-//    var markerCount = 0
-//        for loc in Locations.sharedLocations.list
-//        {
-//            let marker = GMSMarker()
-//            marker.position =  CLLocationCoordinate2D(latitude:loc.latitude,longitude:loc.longitude)
-//            marker.snippet = loc.descr
-//            marker.appearAnimation = kGMSMarkerAnimationPop
-//            marker.map = self.googleMap
-//            markerCount++
-//        }
-//        print("Marker Count in viewDidLoad")
-//        print(markerCount)
-        
+
     }
     
     override func viewWillAppear(animated: Bool)
     {
-//        print("Update in viewWillApear")
-//        Locations.sharedLocations.updateLocations()
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 20)!,
+            NSForegroundColorAttributeName: UIColor.whiteColor()
+        ]
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        
+
     }
     
     override func viewDidAppear(animated: Bool)
@@ -62,7 +50,16 @@ class MapViewController: UIViewController {
             let marker = GMSMarker()
             
             marker.position =  CLLocationCoordinate2D(latitude:loc.latitude,longitude:loc.longitude)
-            marker.icon = UIImage(named: "marker")
+            switch loc.category {
+                case "giftkoeder":
+                    marker.icon = UIImage(named:"giftkoeder_place")
+                case "scherben":
+                    marker.icon = UIImage(named:"scherben_place")
+                case "sonstiges":
+                    marker.icon = UIImage(named:"sonstiges_place")
+                default:
+                    marker.icon = UIImage(named:"sonstiges_place")
+            }
             marker.snippet = loc.descr
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = self.googleMap

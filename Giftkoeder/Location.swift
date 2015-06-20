@@ -17,13 +17,15 @@ class Location {
     var category: String
     
     var id:String
+    var date:NSDate
     
-    init(latitude:Double, longitude:Double, descr:String, category:String, id:String)
+    init(latitude:Double, longitude:Double, descr:String, category:String, id:String, date:NSDate)
     {
         self.latitude = latitude
         self.longitude = longitude
         self.descr = descr
         self.category = category
         self.id = id
+        self.date = date
     }
 }

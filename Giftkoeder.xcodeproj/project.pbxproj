@@ -12,6 +12,7 @@
 		5515B5981B33F1C2007AEE71 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515B5971B33F1C2007AEE71 /* Locations.swift */; };
 		5515B5A11B346AD3007AEE71 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515B59F1B346AD3007AEE71 /* LocationCell.swift */; };
 		5515B5A21B346AD3007AEE71 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5515B5A01B346AD3007AEE71 /* LocationCell.xib */; };
+		5515B5A41B35A812007AEE71 /* DetailEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515B5A31B35A812007AEE71 /* DetailEntryViewController.swift */; };
 		551913EA1B2F4D43005FA4B2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DF1B2F4D43005FA4B2 /* AudioToolbox.framework */; };
 		551913EB1B2F4D43005FA4B2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E01B2F4D43005FA4B2 /* CFNetwork.framework */; };
 		551913EC1B2F4D43005FA4B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913E11B2F4D43005FA4B2 /* CoreGraphics.framework */; };
@@ -58,6 +59,7 @@
 		5515B5971B33F1C2007AEE71 /* Locations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		5515B59F1B346AD3007AEE71 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		5515B5A01B346AD3007AEE71 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		5515B5A31B35A812007AEE71 /* DetailEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEntryViewController.swift; sourceTree = "<group>"; };
 		551913DD1B2F4C97005FA4B2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		551913DF1B2F4D43005FA4B2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		551913E01B2F4D43005FA4B2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -217,6 +219,7 @@
 				5515B5971B33F1C2007AEE71 /* Locations.swift */,
 				5515B59F1B346AD3007AEE71 /* LocationCell.swift */,
 				5515B5A01B346AD3007AEE71 /* LocationCell.xib */,
+				5515B5A31B35A812007AEE71 /* DetailEntryViewController.swift */,
 			);
 			path = Giftkoeder;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				55E2981F1B2F306E00FAAB41 /* ListViewController.swift in Sources */,
 				55E2983F1B2F33B300FAAB41 /* EntryViewController.swift in Sources */,
 				55E2981B1B2F306E00FAAB41 /* AppDelegate.swift in Sources */,
+				5515B5A41B35A812007AEE71 /* DetailEntryViewController.swift in Sources */,
 				5515B5981B33F1C2007AEE71 /* Locations.swift in Sources */,
 				55E298411B2F38BE00FAAB41 /* SettingsViewController.swift in Sources */,
 				5515B5961B33F0FB007AEE71 /* Location.swift in Sources */,

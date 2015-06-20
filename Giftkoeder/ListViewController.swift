@@ -24,6 +24,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return Locations.sharedLocations.list.count
@@ -34,18 +39,60 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         var cell:LocationCell = self.listView.dequeueReusableCellWithIdentifier("cell") as! LocationCell
         
         cell.category.text = Locations.sharedLocations.getItemAtIndex(indexPath.row).category
-//        cell.name.text = sharedInstance.getItemAtIndex(indexPath.row).firstname + " " + sharedInstance.getItemAtIndex(indexPath.row).lastname
-//        //        cell.lastname.text = sharedInstance.getItemAtIndex(indexPath.row).lastname
-//        cell.phonenumber.text = sharedInstance.getItemAtIndex(indexPath.row).phonenumber
         
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yy"
+        var dateString = dateFormatter.stringFromDate(Locations.sharedLocations.getItemAtIndex(indexPath.row).date)
+        print(dateString)
+        cell.date.text = dateString
+
+        switch Locations.sharedLocations.getItemAtIndex(indexPath.row).category {
+            case "giftkoeder":
+                cell.icon.image = UIImage(named:"giftkoeder_icon")
+                break
+            case "scherben":
+                cell.icon.image  = UIImage(named:"scherben_icon")
+                break
+            case "sonstiges":
+                cell.icon.image  = UIImage(named:"sonstiges_icon")
+                break
+            default:
+                cell.icon.image  = UIImage(named:"sonstiges_icon")
+        }
+
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath
-        self.performSegueWithIdentifier("toContactDetails", sender: self)
+        self.performSegueWithIdentifier("toEntryDetails", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toEntryDetails"
+        {
+            let vc = segue.destinationViewController as! DetailEntryViewController
+            vc.index = selectedIndex.row
+        }
+    }
+    
+
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+//    {
+//        if segue.identifier == "toContactDetails"
+//        {
+//            let vc = segue.destinationViewController as! ContactDetailViewController
+//            vc.contact = sharedInstance.getItemAtIndex(selectedIndex.row)
+//            vc.delegate = self
+//        }
+//        else if segue.identifier == "addNewContact"
+//        {
+//            let vc = segue.destinationViewController as! AddContactViewController
+//            vc.contact = Contact(firstname: "", lastname: "", phonenumber: "", birthdate: NSDate(), email: "")
+//            vc.delegate = self
+//        }
+//    }
 
 
 }

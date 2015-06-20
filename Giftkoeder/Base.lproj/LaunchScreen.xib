@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -10,30 +17,48 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 TeamGK. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright (c) 2015 TeamGK. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Giftköder " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-aQ-SVP">
-                    <rect key="frame" x="133" y="200" width="214" height="48"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="DangerDog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-aQ-SVP">
+                    <rect key="frame" x="133" y="143" width="214" height="48"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="scherben_icon" translatesAutoresizingMaskIntoConstraints="NO" id="l1f-1e-OvS">
+                    <rect key="frame" x="215" y="227" width="50" height="50"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sonstiges_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-rU-Nar">
+                    <rect key="frame" x="330" y="227" width="50" height="50"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="giftkoeder_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rHF-d5-JID">
+                    <rect key="frame" x="99" y="227" width="50" height="50"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.086274509803921567" green="0.62745098039215685" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.24705882352941178" green="0.35686274509803922" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="AOi-aQ-SVP" secondAttribute="centerY" id="Dbr-Lw-kZt"/>
+                <constraint firstItem="rgv-rU-Nar" firstAttribute="centerY" secondItem="rHF-d5-JID" secondAttribute="centerY" id="55o-nM-LL4"/>
+                <constraint firstItem="l1f-1e-OvS" firstAttribute="centerY" secondItem="rHF-d5-JID" secondAttribute="centerY" id="EuF-Vt-0HA"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
+                <constraint firstItem="AOi-aQ-SVP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LCd-T8-hT6"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstAttribute="centerX" secondItem="AOi-aQ-SVP" secondAttribute="centerX" id="yNP-A4-egf"/>
+                <constraint firstItem="rgv-rU-Nar" firstAttribute="leading" secondItem="l1f-1e-OvS" secondAttribute="trailing" constant="65" id="aJd-7B-bgh"/>
+                <constraint firstItem="l1f-1e-OvS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bKc-P7-vI2"/>
+                <constraint firstItem="l1f-1e-OvS" firstAttribute="leading" secondItem="rHF-d5-JID" secondAttribute="trailing" constant="66" id="tej-gS-Fpv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="giftkoeder_icon" width="50" height="50"/>
+        <image name="scherben_icon" width="50" height="50"/>
+        <image name="sonstiges_icon" width="50" height="50"/>
+    </resources>
 </document>

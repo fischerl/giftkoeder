@@ -17,9 +17,15 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var descr: UITextView!
     @IBOutlet weak var save: UIButton!
     
+    @IBOutlet weak var lat: UITextField!
+    @IBOutlet weak var long: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +33,14 @@ class EntryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
     @IBAction func saveEntry(sender: UIButton) {
-        var entry = PFObject(className: "Entry")
-        entry["location"] = PFGeoPoint(latitude: 48.1497539, longitude: 11.5944009)
+        var entry = PFObject(className: "Warnings")
+        entry["place"] = PFGeoPoint(latitude: (lat.text! as NSString).doubleValue,longitude: (long.text! as NSString).doubleValue)
         var categoryString = ""
         switch category.selectedSegmentIndex {
             case 0:
@@ -41,8 +52,8 @@ class EntryViewController: UIViewController {
             default:
                 print("Fehler Switch")
         }
-        entry["category"] = categoryString
-        entry["description"] = descr.text
+        entry["type"] = categoryString
+        entry["addition"] = descr.text
         
         entry.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -54,6 +65,8 @@ class EntryViewController: UIViewController {
                 print("fail");
             }
         }
+        
+        Locations.sharedLocations.updateLocations()
         
     }
     

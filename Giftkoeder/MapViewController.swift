@@ -9,11 +9,13 @@
 import UIKit
 import Parse
 import GoogleMaps
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     
     @IBOutlet weak var googleMap: GMSMapView!
+    let locationManager = CLLocationManager()
     
     
     
@@ -24,6 +26,9 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.cameraWithLatitude(48.0999311,
             longitude:11.5181916, zoom:12)
         googleMap.camera = camera
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
 
     }
     
@@ -41,10 +46,11 @@ class MapViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool)
     {
-        print("Update in vieDidAppear")
-        Locations.sharedLocations.updateLocations()
+        self.googleMap.clear()
         
-        var markerCount = 0
+        
+        
+        
         for loc in Locations.sharedLocations.list
         {
             let marker = GMSMarker()
@@ -60,13 +66,18 @@ class MapViewController: UIViewController {
                 default:
                     marker.icon = UIImage(named:"sonstiges_place")
             }
-            marker.snippet = loc.descr
+            marker.snippet = loc.street + ", " + loc.zip + " " + loc.city  + "\n" + loc.descr
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = self.googleMap
-            markerCount++
         }
-        print("Marker Count in viewDidAppear")
-        print(markerCount)
+        
+        let self_lat = self.locationManager.location?.coordinate.latitude
+        let self_long = self.locationManager.location?.coordinate.longitude
+        
+//        let self_marker = GMSMarker()
+//        self_marker.position = CLLocationCoordinate2D(latitude: self_lat!, longitude: self_long!)
+//        self_marker.icon = UIImage(named:"location")
+//        self_marker.map = self.googleMap
     }
     
 

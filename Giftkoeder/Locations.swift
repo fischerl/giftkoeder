@@ -25,64 +25,44 @@ class Locations
         list = [Location]()
         let query = PFQuery(className:"Warnings")
         var objects = query.findObjects()
-        print(objects)
         for object in objects!
         {
-            //                        print(object)
-            //                        print(object["addition"]! as! String)
-            //                        print(object["place"]!!.latitude as Double)
-            //                        print(object["place"]!!.longitude as Double)
-            //                        print(object["type"]! as! String)
-            
             let addition = object["addition"]! as! String
             let lat = object["place"]!!.latitude as Double
             let long = object["place"]!!.longitude as Double
             let type = object["type"]! as! String
             let locationId = object.objectId!! as String
             let date = object.createdAt!! as NSDate
+            let street = object["street"]! as! String
+            let zip = object["zip"]! as! String
+            let city = object["city"]! as! String
             
-            
-            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId, date:date)
+            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId, date:date, street:street, zip:zip, city:city)
             list.append(loc)
-            
         }
-        
-        print("Locations:")
-        print(list.count)
     }
     
     public func updateLocations()
     {
+        print("update")
         list = [Location]()
         let query = PFQuery(className:"Warnings")
         var objects = query.findObjects()
         for object in objects!
         {
-            //                        print(object)
-            //                        print(object["addition"]! as! String)
-            //                        print(object["place"]!!.latitude as Double)
-            //                        print(object["place"]!!.longitude as Double)
-            //                        print(object["type"]! as! String)
-            
             let addition = object["addition"]! as! String
             let lat = object["place"]!!.latitude as Double
             let long = object["place"]!!.longitude as Double
             let type = object["type"]! as! String
             let locationId = object.objectId!! as String
             let date = object.createdAt!! as NSDate
+            let street = object["street"]! as! String
+            let zip = object["zip"]! as! String
+            let city = object["city"]! as! String
             
-            
-            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId, date:date)
+            let loc = Location(latitude: lat, longitude: long, descr: addition, category: type, id: locationId, date:date, street:street, zip:zip, city:city)
             list.append(loc)
             
-        }
-        print("Locations Update:")
-        print(list.count)
-        for item in list
-        {
-            print(item.latitude)
-            print(item.longitude)
-            print("---------------")
         }
     }
     

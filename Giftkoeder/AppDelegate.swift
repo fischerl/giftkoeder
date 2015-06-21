@@ -16,7 +16,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+
     
 
 
@@ -34,7 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBXbzaF43g7eXL4qAUU4KDDfje3Talcl9Y")
         
         
+        
+        
         Locations.sharedLocations
+        
+
         
         
         return true

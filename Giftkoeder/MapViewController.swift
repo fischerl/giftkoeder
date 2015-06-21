@@ -74,10 +74,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let self_lat = self.locationManager.location?.coordinate.latitude
         let self_long = self.locationManager.location?.coordinate.longitude
         
-//        let self_marker = GMSMarker()
-//        self_marker.position = CLLocationCoordinate2D(latitude: self_lat!, longitude: self_long!)
-//        self_marker.icon = UIImage(named:"location")
-//        self_marker.map = self.googleMap
+        if CLLocationManager.authorizationStatus() == .Authorized {
+            let self_marker = GMSMarker()
+            self_marker.position = CLLocationCoordinate2D(latitude: self_lat!, longitude: self_long!)
+            self_marker.icon = UIImage(named:"location")
+            self_marker.map = self.googleMap
+        }
+        
     }
     
 

@@ -29,7 +29,7 @@
 		552A48D21B30A53E004041EC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48CD1B30A4C9004041EC /* Social.framework */; };
 		552A48D41B30A554004041EC /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48D31B30A554004041EC /* GoogleMaps.framework */; };
 		552A48D61B30A599004041EC /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 552A48D51B30A599004041EC /* libstdc++.6.dylib */; };
-		5596F7BD1B36A05D00526FF5 /* oettingen.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5596F7BC1B36A05D00526FF5 /* oettingen.gpx */; };
+		552BAD0E1B39D4460039071A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BAD0D1B39D4460039071A /* ShareViewController.swift */; };
 		55B488E81B309DE200FFD707 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 55B488E71B309DE200FFD707 /* Podfile */; };
 		55E2981B1B2F306E00FAAB41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2981A1B2F306E00FAAB41 /* AppDelegate.swift */; };
 		55E2981D1B2F306E00FAAB41 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2981C1B2F306E00FAAB41 /* MapViewController.swift */; };
@@ -84,7 +84,7 @@
 		552A48CF1B30A4D1004041EC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		552A48D31B30A554004041EC /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		552A48D51B30A599004041EC /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
-		5596F7BC1B36A05D00526FF5 /* oettingen.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oettingen.gpx; sourceTree = "<group>"; };
+		552BAD0D1B39D4460039071A /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		55B488E71B309DE200FFD707 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		55E298151B2F306E00FAAB41 /* Giftkoeder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giftkoeder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E298191B2F306E00FAAB41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				5515B59F1B346AD3007AEE71 /* LocationCell.swift */,
 				5515B5A01B346AD3007AEE71 /* LocationCell.xib */,
 				5515B5A31B35A812007AEE71 /* DetailEntryViewController.swift */,
-				5596F7BC1B36A05D00526FF5 /* oettingen.gpx */,
+				552BAD0D1B39D4460039071A /* ShareViewController.swift */,
 			);
 			path = Giftkoeder;
 			sourceTree = "<group>";
@@ -339,7 +339,6 @@
 				5515B5A21B346AD3007AEE71 /* LocationCell.xib in Resources */,
 				55E298431B2F3A9500FAAB41 /* Images.xcassets in Resources */,
 				55E298221B2F306E00FAAB41 /* Main.storyboard in Resources */,
-				5596F7BD1B36A05D00526FF5 /* oettingen.gpx in Resources */,
 				55B488E81B309DE200FFD707 /* Podfile in Resources */,
 				55E298271B2F306E00FAAB41 /* LaunchScreen.xib in Resources */,
 			);
@@ -394,6 +393,7 @@
 			files = (
 				55E2981F1B2F306E00FAAB41 /* ListViewController.swift in Sources */,
 				55E2983F1B2F33B300FAAB41 /* EntryViewController.swift in Sources */,
+				552BAD0E1B39D4460039071A /* ShareViewController.swift in Sources */,
 				55E2981B1B2F306E00FAAB41 /* AppDelegate.swift in Sources */,
 				5515B5A41B35A812007AEE71 /* DetailEntryViewController.swift in Sources */,
 				5515B5981B33F1C2007AEE71 /* Locations.swift in Sources */,

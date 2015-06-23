@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import CoreLocation
 
-class EntryViewController: UIViewController, CLLocationManagerDelegate {
+class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopoverControllerDelegate {
 
     @IBOutlet weak var category: UISegmentedControl!
     @IBOutlet weak var descr: UITextView!
@@ -48,6 +48,17 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate {
         
         
         
+    }
+    
+    @IBAction func addPopover(sender: UIBarButtonItem){
+        let popOver = UIPopoverController(contentViewController:self)
+     
+        
+    }
+    
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle{
+        return .None
     }
     
     @IBAction func locationIndexChanged(sender:UISegmentedControl)

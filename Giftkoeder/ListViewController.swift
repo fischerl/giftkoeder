@@ -14,14 +14,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         var nib = UINib(nibName: "LocationCell", bundle: nil)
         listView.registerNib(nib, forCellReuseIdentifier: "cell")
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.listView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,16 +42,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return Locations.sharedLocations.list.count
     }
     
+
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        
+
+        
         var cell:LocationCell = self.listView.dequeueReusableCellWithIdentifier("cell") as! LocationCell
         
-        cell.category.text = Locations.sharedLocations.getItemAtIndex(indexPath.row).category
+        cell.category.text = Locations.sharedLocations.getItemAtIndex(indexPath.row).street
         
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd.MM.yy"
         var dateString = dateFormatter.stringFromDate(Locations.sharedLocations.getItemAtIndex(indexPath.row).date)
-        print(dateString)
         cell.date.text = dateString
 
         switch Locations.sharedLocations.getItemAtIndex(indexPath.row).category {
@@ -77,22 +89,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
-//    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-//    {
-//        if segue.identifier == "toContactDetails"
-//        {
-//            let vc = segue.destinationViewController as! ContactDetailViewController
-//            vc.contact = sharedInstance.getItemAtIndex(selectedIndex.row)
-//            vc.delegate = self
-//        }
-//        else if segue.identifier == "addNewContact"
-//        {
-//            let vc = segue.destinationViewController as! AddContactViewController
-//            vc.contact = Contact(firstname: "", lastname: "", phonenumber: "", birthdate: NSDate(), email: "")
-//            vc.delegate = self
-//        }
-//    }
 
 
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import CoreLocation
 import AddressBookUI
+import GoogleMaps
 
 class DetailEntryViewController: UIViewController {
     
@@ -19,7 +19,7 @@ class DetailEntryViewController: UIViewController {
     @IBOutlet weak var dateText: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
     @IBOutlet weak var detailsTitle: UINavigationItem!
-    
+    @IBOutlet weak var googleMap: GMSMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,28 +32,30 @@ class DetailEntryViewController: UIViewController {
         var location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
 //        println(location)
         
+        self.locationText.text = Locations.sharedLocations.getItemAtIndex(index!).street + ", " + Locations.sharedLocations.getItemAtIndex(index!).zip + " " + Locations.sharedLocations.getItemAtIndex(index!).city
         
         
-        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-            print(location)
-            
-            if error != nil {
-                print("Reverse geocoder failed with error")
-                return
-            }
-            
-            if let pm = placemarks?.first {
-                let name:String = pm.addressDictionary["Name"]! as! String
-                let zip:String = pm.addressDictionary["ZIP"]! as! String
-                let city:String = pm.addressDictionary["SubAdministrativeArea"]! as! String
-                let locationString = name + ", " + zip + " " + city
-                
-                self.locationText.text =  locationString
-            }
-            else {
-                print("Problem with the data received from geocoder")
-            }
-        })
+        
+//        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+//            print(location)
+//            
+//            if error != nil {
+//                print("Reverse geocoder failed with error")
+//                return
+//            }
+//            
+//            if let pm = placemarks?.first {
+//                let name:String = pm.addressDictionary["Name"]! as! String
+//                let zip:String = pm.addressDictionary["ZIP"]! as! String
+//                let city:String = pm.addressDictionary["SubAdministrativeArea"]! as! String
+//                let locationString = name + ", " + zip + " " + city
+//                
+//                self.locationText.text =  locationString
+//            }
+//            else {
+//                print("Problem with the data received from geocoder")
+//            }
+//        })
         
         
         var dateFormatter = NSDateFormatter()
@@ -61,6 +63,27 @@ class DetailEntryViewController: UIViewController {
         var dateString = dateFormatter.stringFromDate(Locations.sharedLocations.getItemAtIndex(index!).date)
         dateText.text = dateString
         descriptionText.text = Locations.sharedLocations.getItemAtIndex(index!).descr
+        
+        
+        // Google Map
+        let camera = GMSCameraPosition.cameraWithLatitude(Locations.sharedLocations.getItemAtIndex(index!).latitude,
+            longitude:Locations.sharedLocations.getItemAtIndex(index!).longitude, zoom:15)
+        googleMap.camera = camera
+        // Marker
+        let marker = GMSMarker()
+        marker.position =  CLLocationCoordinate2D(latitude:Locations.sharedLocations.getItemAtIndex(index!).latitude,longitude:Locations.sharedLocations.getItemAtIndex(index!).longitude)
+        switch Locations.sharedLocations.getItemAtIndex(index!).category {
+        case "giftkoeder":
+            marker.icon = UIImage(named:"giftkoeder_place")
+        case "scherben":
+            marker.icon = UIImage(named:"scherben_place")
+        case "sonstiges":
+            marker.icon = UIImage(named:"sonstiges_place")
+        default:
+            marker.icon = UIImage(named:"sonstiges_place")
+        }
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = self.googleMap
     }
     
     override func viewWillAppear(animated: Bool)

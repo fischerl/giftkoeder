@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeueLights.ttc">
@@ -23,20 +23,23 @@
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="DangerDog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-aQ-SVP">
-                    <rect key="frame" x="133" y="143" width="214" height="48"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Dog Guard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-aQ-SVP">
+                    <rect key="frame" x="133" y="78" width="214" height="48"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="scherben_icon" translatesAutoresizingMaskIntoConstraints="NO" id="l1f-1e-OvS">
-                    <rect key="frame" x="215" y="227" width="50" height="50"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="scherben_icon" translatesAutoresizingMaskIntoConstraints="NO" id="l1f-1e-OvS">
+                    <rect key="frame" x="215" y="282" width="50" height="50"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sonstiges_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-rU-Nar">
-                    <rect key="frame" x="330" y="227" width="50" height="50"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sonstiges_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-rU-Nar">
+                    <rect key="frame" x="330" y="282" width="50" height="50"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="giftkoeder_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rHF-d5-JID">
-                    <rect key="frame" x="99" y="227" width="50" height="50"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="giftkoeder_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rHF-d5-JID">
+                    <rect key="frame" x="99" y="282" width="50" height="50"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchIconSmall" translatesAutoresizingMaskIntoConstraints="NO" id="GeJ-sC-u9b">
+                    <rect key="frame" x="190" y="190" width="100" height="100"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.24705882352941178" green="0.35686274509803922" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,9 +49,11 @@
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="AOi-aQ-SVP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LCd-T8-hT6"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="GeJ-sC-u9b" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qtn-Da-4wL"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint firstItem="rgv-rU-Nar" firstAttribute="leading" secondItem="l1f-1e-OvS" secondAttribute="trailing" constant="65" id="aJd-7B-bgh"/>
                 <constraint firstItem="l1f-1e-OvS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bKc-P7-vI2"/>
+                <constraint firstItem="GeJ-sC-u9b" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="f7O-zO-Jr8"/>
                 <constraint firstItem="l1f-1e-OvS" firstAttribute="leading" secondItem="rHF-d5-JID" secondAttribute="trailing" constant="66" id="tej-gS-Fpv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -58,6 +63,7 @@
     </objects>
     <resources>
         <image name="giftkoeder_icon" width="50" height="50"/>
+        <image name="launchIconSmall" width="100" height="100"/>
         <image name="scherben_icon" width="50" height="50"/>
         <image name="sonstiges_icon" width="50" height="50"/>
     </resources>

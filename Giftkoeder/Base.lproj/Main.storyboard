@@ -332,7 +332,7 @@
                         <barButtonItem key="rightBarButtonItem" image="settings" id="ehJ-r6-3k4">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="6Eu-0S-bRw" kind="push" id="1Eo-1y-tmO"/>
+                                <segue destination="6Eu-0S-bRw" kind="push" identifier="toSettings" id="0Vk-7L-zZN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -496,12 +496,19 @@
                             <constraint firstItem="UkZ-ny-9bM" firstAttribute="top" secondItem="NFG-Pe-fCO" secondAttribute="bottom" id="us7-8N-UsW"/>
                             <constraint firstItem="fqe-4y-gBc" firstAttribute="height" secondItem="r96-XG-Ttd" secondAttribute="height" id="vJw-yZ-8jz"/>
                         </constraints>
+                        <connections>
+                            <outlet property="pushRadiusSlider" destination="8Ip-rR-Utv" id="IlJ-xq-RrP"/>
+                            <outlet property="pushRadiusText" destination="jC7-ri-KVo" id="gCP-93-T5Q"/>
+                            <outlet property="pushSwitch" destination="8kH-rh-iQw" id="3OF-Rr-qbR"/>
+                            <outlet property="showAll" destination="pIn-go-MkW" id="eh2-B8-y73"/>
+                            <outlet property="showRadiusText" destination="s68-ms-Opv" id="xGe-jd-fHT"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Einstellungen Liste" id="Lnj-QN-8dm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANO-8M-jrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="1807"/>
+            <point key="canvasLocation" x="206" y="1655"/>
         </scene>
         <!--Eintrag Details-->
         <scene sceneID="sXg-aC-SpL">

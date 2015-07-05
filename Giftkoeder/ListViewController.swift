@@ -11,6 +11,11 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var listView: UITableView!
     var selectedIndex: NSIndexPath = NSIndexPath();
+    
+    var radius:Float = 0.0
+    var showAllWarnings:Bool = false
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +90,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             let vc = segue.destinationViewController as! DetailEntryViewController
             vc.index = selectedIndex.row
+        }
+        else if segue.identifier == "toSettings" {
+            let vc = segue.destinationViewController as! ListSettingsViewController
+            vc.radius = self.radius
+            vc.showAllWarningsBool = self.showAllWarnings
         }
     }
     

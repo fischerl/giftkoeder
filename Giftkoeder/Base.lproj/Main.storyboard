@@ -352,7 +352,7 @@
                         <viewControllerLayoutGuide type="top" id="fCH-Jn-ifb"/>
                         <viewControllerLayoutGuide type="bottom" id="UkZ-ny-9bM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r96-XG-Ttd" customClass="ListSettingsViewController">
+                    <view key="view" contentMode="scaleToFill" id="r96-XG-Ttd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -390,7 +390,7 @@
                                                 <rect key="frame" x="18" y="29" width="564" height="31"/>
                                                 <color key="minimumTrackTintColor" red="0.0039215686269999999" green="0.7843137255" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
-                                                    <action selector="mapRadiusChanged:" destination="ANO-8M-jrJ" eventType="valueChanged" id="07g-TG-8jk"/>
+                                                    <action selector="radiusChanged:" destination="ANO-8M-jrJ" eventType="valueChanged" id="07f-xB-jKI"/>
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="200 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jC7-ri-KVo">
@@ -420,7 +420,7 @@
                                                 <accessibility key="accessibilityConfiguration" identifier="showAllMessages"/>
                                                 <color key="onTintColor" red="0.0039215686269999999" green="0.7843137255" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
-                                                    <action selector="showAllSwitchChanged:" destination="ANO-8M-jrJ" eventType="valueChanged" id="2J4-VD-bMO"/>
+                                                    <action selector="showAllSwitchChanged:" destination="ANO-8M-jrJ" eventType="valueChanged" id="Wjz-5b-Xxj"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Push Benachtrichtigungen Radius" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oo-Xq-26p">
@@ -429,10 +429,6 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="50" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="8Ip-rR-Utv">
-                                                <rect key="frame" x="18" y="263" width="564" height="31"/>
-                                                <color key="minimumTrackTintColor" red="0.0039215686269999999" green="0.7843137255" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                            </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Push Benachtrichtigungen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLR-wT-4g3">
                                                 <rect key="frame" x="20" y="196" width="186" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
@@ -445,6 +441,10 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="50" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="8Ip-rR-Utv">
+                                                <rect key="frame" x="18" y="263" width="564" height="31"/>
+                                                <color key="minimumTrackTintColor" red="0.0039215686269999999" green="0.7843137255" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                            </slider>
                                         </subviews>
                                         <color key="backgroundColor" red="0.2470588235" green="0.35686274509999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -496,15 +496,16 @@
                             <constraint firstItem="UkZ-ny-9bM" firstAttribute="top" secondItem="NFG-Pe-fCO" secondAttribute="bottom" id="us7-8N-UsW"/>
                             <constraint firstItem="fqe-4y-gBc" firstAttribute="height" secondItem="r96-XG-Ttd" secondAttribute="height" id="vJw-yZ-8jz"/>
                         </constraints>
-                        <connections>
-                            <outlet property="pushRadiusSlider" destination="8Ip-rR-Utv" id="IlJ-xq-RrP"/>
-                            <outlet property="pushRadiusText" destination="jC7-ri-KVo" id="gCP-93-T5Q"/>
-                            <outlet property="pushSwitch" destination="8kH-rh-iQw" id="3OF-Rr-qbR"/>
-                            <outlet property="showAll" destination="pIn-go-MkW" id="eh2-B8-y73"/>
-                            <outlet property="showRadiusText" destination="s68-ms-Opv" id="xGe-jd-fHT"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Einstellungen Liste" id="Lnj-QN-8dm"/>
+                    <connections>
+                        <outlet property="pushLabel" destination="jC7-ri-KVo" id="fxx-ag-ryo"/>
+                        <outlet property="pushSlider" destination="8Ip-rR-Utv" id="aWk-YA-9op"/>
+                        <outlet property="pushSwitch" destination="8kH-rh-iQw" id="uXm-dQ-ydO"/>
+                        <outlet property="showAllSwitch" destination="pIn-go-MkW" id="vfr-KQ-Zdv"/>
+                        <outlet property="showRadiusLabel" destination="s68-ms-Opv" id="BOZ-ba-Jn8"/>
+                        <outlet property="showRadiusSlider" destination="SVp-vu-y50" id="BIU-qW-FV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANO-8M-jrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

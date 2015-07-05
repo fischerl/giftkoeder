@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var listView: UITableView!
     var selectedIndex: NSIndexPath = NSIndexPath();
     
-    var radius:Float = 0.0
+    var radius:Float = 10.0
     var showAllWarnings:Bool = false
     
-    
+    let locationManager = CLLocationManager()
+    var filteredList = [Location]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +27,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view, typically from a nib.
         var nib = UINib(nibName: "LocationCell", bundle: nil)
         listView.registerNib(nib, forCellReuseIdentifier: "cell")
+
+        
+        
+        
+        
+        
+        
         
         
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        
+        
+        
         self.listView.reloadData()
     }
 
@@ -40,11 +53,34 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        let latUser = self.locationManager.location?.coordinate.latitude
+        let longUser = self.locationManager.location?.coordinate.longitude
+        let locationUser = CLLocation(latitude: latUser! as! CLLocationDegrees, longitude: longUser! as! CLLocationDegrees)
+        
+        self.filteredList.removeAll()
+        for item in Locations.sharedLocations.list
+        {
+            let location = CLLocation(latitude: item.latitude, longitude: item.longitude)
+            let distance = location.distanceFromLocation(locationUser)
+            
+            if self.showAllWarnings || Float(distance) < self.radius*1000
+            {
+                self.filteredList.append(item)
+                
+            }
+        }
+)
+        
+       
+        
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return Locations.sharedLocations.list.count
+//        return Locations.sharedLocations.list.count
+        return self.filteredList.count
     }
     
 
@@ -53,17 +89,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         
 
-        
+        let item = self.filteredList[indexPath.row]
         var cell:LocationCell = self.listView.dequeueReusableCellWithIdentifier("cell") as! LocationCell
-        
-        cell.category.text = Locations.sharedLocations.getItemAtIndex(indexPath.row).street
-        
+        cell.category.text = item.street
+            
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd.MM.yy"
-        var dateString = dateFormatter.stringFromDate(Locations.sharedLocations.getItemAtIndex(indexPath.row).date)
+        var dateString = dateFormatter.stringFromDate(item.date)
         cell.date.text = dateString
-
-        switch Locations.sharedLocations.getItemAtIndex(indexPath.row).category {
+            
+        switch item.category {
             case "giftkoeder":
                 cell.icon.image = UIImage(named:"giftkoeder_icon")
                 break
@@ -76,9 +111,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             default:
                 cell.icon.image  = UIImage(named:"sonstiges_icon")
         }
-
+            
         return cell
     }
+    
+    func tableV
+        
+        
+        
+        
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath

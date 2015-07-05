@@ -20,7 +20,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     
     var mapType = "standard"
-    var mapRadius:Float = 0.0
+    var mapRadius:Float = 10.0
     var showAllWarnings:Bool = false
 
     
@@ -98,13 +98,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         for loc in Locations.sharedLocations.list
         {
             let locationPoint = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
-//            let latUser = self.locationManager.location?.coordinate.latitude
-//            let longUser = self.locationManager.location?.coordinate.longitude
-//            let locationUser = CLLocation(latitude: latUser!  as! CLLocationDegrees, longitude: longUser! as! CLLocationDegrees)
-//            let distance = locationPoint.distanceFromLocation(locationUser)
+            let latUser = self.locationManager.location?.coordinate.latitude
+            let longUser = self.locationManager.location?.coordinate.longitude
+            let locationUser = CLLocation(latitude: latUser!  as! CLLocationDegrees, longitude: longUser! as! CLLocationDegrees)
+            let distance = locationPoint.distanceFromLocation(locationUser)
 
-//                if  self.showAllWarnings || Float(distance) < self.mapRadius*1000
-//                {
+                if  self.showAllWarnings || Float(distance) < self.mapRadius*1000
+                {
                     let marker = GMSMarker()
                     
                     marker.position =  CLLocationCoordinate2D(latitude:loc.latitude,longitude:loc.longitude)
@@ -122,7 +122,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     marker.appearAnimation = kGMSMarkerAnimationPop
                     marker.map = self.googleMap
                 
-//            }
+            }
             
         }
             

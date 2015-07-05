@@ -12,12 +12,15 @@ import UIKit
 class ListSettingsViewController: UIViewController {
     
 
-    @IBOutlet weak var showRadius: UISlider!
-    @IBOutlet weak var showRadiusText: UILabel!
-    @IBOutlet weak var showAll: UISwitch!
+
+    @IBOutlet weak var showRadiusSlider: UISlider!
+    @IBOutlet weak var showRadiusLabel: UILabel!
+    
     @IBOutlet weak var pushSwitch: UISwitch!
+    @IBOutlet weak var pushSlider: UISlider!
+    @IBOutlet weak var pushLabel: UILabel!
     @IBOutlet weak var pushRadiusSlider: UISlider!
-    @IBOutlet weak var pushRadiusText: UILabel!
+    @IBOutlet weak var showAllSwitch: UISwitch!
     
     var radius:Float = 0.0
     var showAllWarningsBool:Bool = false
@@ -28,9 +31,9 @@ class ListSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showRadius.value = radius
-        showRadiusText.text = round(radius).description + " km"
-        showAll.on = showAllWarningsBool
+        showRadiusSlider.value = radius
+        showRadiusLabel.text = round(radius).description + " km"
+        showAllSwitch.on = showAllWarningsBool
     }
     
     @IBAction func showAllSwitchChanged(sender:UISwitch)
@@ -38,15 +41,15 @@ class ListSettingsViewController: UIViewController {
         let vc = self.navigationController?.viewControllers.first as! ListViewController
         if sender.on
         {
-            self.showRadius.tintColor = UIColor.grayColor()
-            self.showRadius.enabled = false
+            self.showRadiusSlider.tintColor = UIColor.grayColor()
+            self.showRadiusSlider.enabled = false
             self.showAllWarningsBool = true
             vc.showAllWarnings = true
         }
         else
         {
-            self.showRadius.tintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
-            self.showRadius.enabled = true
+            self.showRadiusSlider.tintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+            self.showRadiusSlider.enabled = true
             self.showAllWarningsBool = false
             vc.showAllWarnings = false
         }
@@ -56,9 +59,9 @@ class ListSettingsViewController: UIViewController {
     @IBAction func radiusChanged(sender:UISlider)
     {
         let vc = self.navigationController?.viewControllers.first as! ListViewController
-        vc.radius = self.showRadius.value
-        self.radius = self.showRadius.value
-        showRadiusText.text = round(self.radius).description + " km"
+        vc.radius = self.showRadiusSlider.value
+        self.radius = self.showRadiusSlider.value
+        showRadiusLabel.text = round(self.radius).description + " km"
     }
     
     

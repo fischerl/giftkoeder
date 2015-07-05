@@ -110,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551913EC1B2F4D43005FA4B2 /* CoreGraphics.framework in Frameworks */,
+				551913EB1B2F4D43005FA4B2 /* CFNetwork.framework in Frameworks */,
+				551913EA1B2F4D43005FA4B2 /* AudioToolbox.framework in Frameworks */,
 				551913ED1B2F4D43005FA4B2 /* CoreLocation.framework in Frameworks */,
 				5515B5881B319BDE007AEE71 /* Bolts.framework in Frameworks */,
 				552A48D61B30A599004041EC /* libstdc++.6.dylib in Frameworks */,
@@ -118,10 +121,7 @@
 				552A48D11B30A534004041EC /* Accounts.framework in Frameworks */,
 				55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */,
 				551913F71B2F50BD005FA4B2 /* CoreData.framework in Frameworks */,
-				551913EA1B2F4D43005FA4B2 /* AudioToolbox.framework in Frameworks */,
 				8477578F1B319ECE00F235A8 /* Parse.framework in Frameworks */,
-				551913EB1B2F4D43005FA4B2 /* CFNetwork.framework in Frameworks */,
-				551913EC1B2F4D43005FA4B2 /* CoreGraphics.framework in Frameworks */,
 				551913EE1B2F4D43005FA4B2 /* libsqlite3.dylib in Frameworks */,
 				551913EF1B2F4D43005FA4B2 /* libz.dylib in Frameworks */,
 				551913F01B2F4D43005FA4B2 /* MobileCoreServices.framework in Frameworks */,
@@ -305,6 +305,11 @@
 					55E298141B2F306E00FAAB41 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = D7AC22HAM8;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					55E2982B1B2F306E00FAAB41 = {
 						CreatedOnToolsVersion = 6.3.1;

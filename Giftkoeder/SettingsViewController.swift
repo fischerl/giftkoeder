@@ -23,6 +23,9 @@ class SettingsViewController: UIViewController {
     var mapRadius:Float = 0.0
     var showAllWarningsBool:Bool = false
     
+    var mapPushRadius:Float = 0.0
+    var pushIsOn:Bool = false
+    
 
     
     
@@ -42,7 +45,11 @@ class SettingsViewController: UIViewController {
         }
         showRadius.value = mapRadius
         showRadiusText.text = round(mapRadius).description + " km"
+        pushRadiusText.text = round(mapPushRadius).description + " m"
         showAllWarnings.on = showAllWarningsBool
+        
+        pushRadius.value = mapPushRadius
+        pushOnOff.on = pushIsOn
 
     
         
@@ -71,11 +78,40 @@ class SettingsViewController: UIViewController {
         
     }
     
+    // Same as ShowAllWarnings for Push
+    @IBAction func pushSwitchChanged(sender:UISwitch)
+    {
+        let vc = self.navigationController?.viewControllers.first as! MapViewController
+        if sender.on
+        {
+            self.pushRadius.tintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+            self.pushRadius.enabled = true
+            self.pushIsOn = true
+            vc.pushIsOn = true
+        }
+        else
+        {
+            self.pushRadius.tintColor = UIColor.grayColor()
+            self.pushRadius.enabled = false
+            self.pushIsOn = false
+            vc.pushIsOn = false
+        }
+        
+    }
+    
     @IBAction func mapRadiusChanged(sender:UISlider) {
         let vc = self.navigationController?.viewControllers.first as! MapViewController
         vc.mapRadius = showRadius.value
         self.mapRadius = showRadius.value
         showRadiusText.text = round(mapRadius).description + " km"
+    }
+
+    // Same as mapRadiusChanged for Push
+    @IBAction func pushRadiusChanged(sender:UISlider) {
+        let vc = self.navigationController?.viewControllers.first as! MapViewController
+        vc.mapPushRadius = pushRadius.value
+        self.mapPushRadius = pushRadius.value
+        pushRadiusText.text = round(mapPushRadius).description + " m"
     }
     
     @IBAction func indexChanged(sender:UISegmentedControl) {

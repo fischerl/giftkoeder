@@ -22,8 +22,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var mapType = "standard"
     var mapRadius:Float = 0.0
     var showAllWarnings:Bool = false
-
     
+    // New Variables
+    var mapPushRadius:Float = 0.0
+    var pushIsOn:Bool = false
+
+    // Background LocationManager
+    /*lazy var locationManager2: CLLocationManager! = {
+        let manager = CLLocationManager()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.delegate = self
+        manager.requestAlwaysAuthorization()
+        return manager
+        }()*/
+
     
     
     override func viewDidLoad() {
@@ -62,6 +74,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             vc.mapTypeString = self.mapType
             vc.mapRadius = self.mapRadius
             vc.showAllWarningsBool = self.showAllWarnings
+            
+            vc.mapPushRadius = self.mapPushRadius
+            vc.pushIsOn = self.pushIsOn
         }
     }
 
@@ -92,8 +107,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     {
         self.googleMap.clear()
         
-        
-        
+        // Start Background Thread for Localization
+        if (pushIsOn){
+            print("Push is on with radius:")
+            print(mapPushRadius)
+            locationManager.startUpdatingLocation()
+        } else {
+            print("Push is off")
+            locationManager.stopUpdatingLocation()
+        }
         
         for loc in Locations.sharedLocations.list
         {
@@ -139,13 +161,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    // Handle new Background Positions
+    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
 
-    
-    
-
-    
-
-
+        //let locationPoint = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
+        let zaehler:Int = 0
+        
+        // If App is in BAckground
+        if UIApplication.sharedApplication().applicationState == .Active {
+        } else {
+            // Search for a Location in Push Radius
+            for loc in Locations.sharedLocations.list
+            {
+                
+                let locationPoint = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
+                let distance = locationPoint.distanceFromLocation(newLocation)
+                
+                if  Float(distance) < self.mapPushRadius
+                {
+                    zaehler+1
+                }
+            }
+            // If there is one, create a Push to inform User
+            if zaehler > 0 {
+                // PUSH Nachricht
+            }
+        }
+    }
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

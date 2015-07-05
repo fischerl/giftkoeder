@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -168,6 +168,9 @@
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="50" maxValue="5000" translatesAutoresizingMaskIntoConstraints="NO" id="90U-Vo-sey">
                                 <rect key="frame" x="18" y="397" width="564" height="31"/>
+                                <connections>
+                                    <action selector="pushRadiusChanged:" destination="fV8-mJ-GxM" eventType="valueChanged" id="1ju-re-odJ"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5E-C5-m78">
                                 <rect key="frame" x="525" y="126" width="55" height="21"/>
@@ -187,9 +190,12 @@
                                     <action selector="indexChanged:" destination="cS5-YA-D9p" eventType="valueChanged" id="QAq-dG-naL"/>
                                 </connections>
                             </segmentedControl>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeF-yX-EBP">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qeF-yX-EBP">
                                 <rect key="frame" x="531" y="326" width="51" height="31"/>
                                 <color key="onTintColor" red="0.0039215686269999999" green="0.7843137255" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="pushSwitchChanged:" destination="fV8-mJ-GxM" eventType="valueChanged" id="amo-2l-yr1"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ik0-kt-F6J">
                                 <rect key="frame" x="531" y="164" width="51" height="31"/>

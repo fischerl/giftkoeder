@@ -43,7 +43,7 @@
 		55EDA4621B492FC8008BD337 /* ListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDA4611B492FC8008BD337 /* ListSettingsViewController.swift */; };
 		55EDA4641B495B19008BD337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDA4631B495B19008BD337 /* LoginViewController.swift */; };
 		55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EDC6941B30A2CF0023F8C1 /* libc++.dylib */; };
-		8477578F1B319ECE00F235A8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DD1B2F4C97005FA4B2 /* Parse.framework */; };
+		55FEA7951B49B50F00027B38 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DD1B2F4C97005FA4B2 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FEA7951B49B50F00027B38 /* Parse.framework in Frameworks */,
 				551913ED1B2F4D43005FA4B2 /* CoreLocation.framework in Frameworks */,
 				5515B5881B319BDE007AEE71 /* Bolts.framework in Frameworks */,
 				552A48D61B30A599004041EC /* libstdc++.6.dylib in Frameworks */,
@@ -123,7 +124,6 @@
 				55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */,
 				551913F71B2F50BD005FA4B2 /* CoreData.framework in Frameworks */,
 				551913EA1B2F4D43005FA4B2 /* AudioToolbox.framework in Frameworks */,
-				8477578F1B319ECE00F235A8 /* Parse.framework in Frameworks */,
 				551913EB1B2F4D43005FA4B2 /* CFNetwork.framework in Frameworks */,
 				551913EC1B2F4D43005FA4B2 /* CoreGraphics.framework in Frameworks */,
 				551913EE1B2F4D43005FA4B2 /* libsqlite3.dylib in Frameworks */,

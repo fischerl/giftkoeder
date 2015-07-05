@@ -40,6 +40,7 @@
 		55E2983F1B2F33B300FAAB41 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2983E1B2F33B300FAAB41 /* EntryViewController.swift */; };
 		55E298411B2F38BE00FAAB41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E298401B2F38BE00FAAB41 /* SettingsViewController.swift */; };
 		55E298431B2F3A9500FAAB41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E298421B2F3A9500FAAB41 /* Images.xcassets */; };
+		55EDA4621B492FC8008BD337 /* ListSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDA4611B492FC8008BD337 /* ListSettingsViewController.swift */; };
 		55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EDC6941B30A2CF0023F8C1 /* libc++.dylib */; };
 		8477578F1B319ECE00F235A8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DD1B2F4C97005FA4B2 /* Parse.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		55E2983E1B2F33B300FAAB41 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		55E298401B2F38BE00FAAB41 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		55E298421B2F3A9500FAAB41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		55EDA4611B492FC8008BD337 /* ListSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSettingsViewController.swift; sourceTree = "<group>"; };
 		55EDC6941B30A2CF0023F8C1 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		5C1C28A2ACFCFBEE8CFB8309 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C56EB3224F5C3011111480FD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				5515B5A01B346AD3007AEE71 /* LocationCell.xib */,
 				5515B5A31B35A812007AEE71 /* DetailEntryViewController.swift */,
 				552BAD0D1B39D4460039071A /* ShareViewController.swift */,
+				55EDA4611B492FC8008BD337 /* ListSettingsViewController.swift */,
 			);
 			path = Giftkoeder;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				55E298411B2F38BE00FAAB41 /* SettingsViewController.swift in Sources */,
 				5515B5961B33F0FB007AEE71 /* Location.swift in Sources */,
 				5515B5A11B346AD3007AEE71 /* LocationCell.swift in Sources */,
+				55EDA4621B492FC8008BD337 /* ListSettingsViewController.swift in Sources */,
 				55E2981D1B2F306E00FAAB41 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

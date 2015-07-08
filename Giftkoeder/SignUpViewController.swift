@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import Parse
 
-class SignUpViewController: UIViewController
+class SignUpViewController: UIViewController, UITextFieldDelegate
 {
     
     
@@ -18,18 +18,44 @@ class SignUpViewController: UIViewController
     @IBOutlet weak var passwort: UITextField!
     @IBOutlet weak var passRepeat: UITextField!
     @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var content: UIView!
     
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         
+        username.delegate = self
+        passwort.delegate = self
+        passRepeat.delegate = self
+        mail.delegate = self
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        content.addGestureRecognizer(recognizer)
+    }
+    
+    func handleTap(recognizer: UITapGestureRecognizer)
+    {
+        username.resignFirstResponder()
+        passwort.resignFirstResponder()
+        passRepeat.resignFirstResponder()
+        mail.resignFirstResponder()
+        
+        println("tappped")
+    }
+    
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func signUpButton(sender: AnyObject)
     {
         if (self.username != "" && self.passwort != "" && self.passRepeat != "" && self.mail != "")
         {
-            if self.passwort == self.passRepeat
+            if self.passwort.text == self.passRepeat.text
             {
                 var user = PFUser()
                 user.username = self.username.text
@@ -53,8 +79,21 @@ class SignUpViewController: UIViewController
                         }
                 }
             }
+            else
+            {
+                // TODO
+                print("Passwoerter muessen identisch sein!")
+                print(passwort.text + " " + passRepeat.text)
+            }
+        }
+        else
+        {
+            // TODO
+            print("Alle Felder muessen ausgefuellt werden!")
         }
     }
+    
+
  
     
 }

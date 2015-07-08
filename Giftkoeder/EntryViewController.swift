@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import CoreLocation
 
-class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopoverControllerDelegate {
+class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var category: UISegmentedControl!
     @IBOutlet weak var descr: UITextView!
@@ -21,6 +21,14 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
     
     @IBOutlet weak var zipLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var ortLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var warningLabel: UILabel!
+
+    
+    @IBOutlet weak var content: UIView!
     
     let locationManager = CLLocationManager()
   
@@ -32,6 +40,10 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        print(PFUser.currentUser())
+        
+
+
 
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
@@ -42,13 +54,21 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
             street.enabled = false
         }
         
-        
+        descr.delegate = self
+        zip.delegate = self
+        street.delegate = self
 
+        let recognizer = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        content.addGestureRecognizer(recognizer)
+    }
+    
+    func handleTap(recognizer: UITapGestureRecognizer)
+    {
+        descr.resignFirstResponder()
+        zip.resignFirstResponder()
+        street.resignFirstResponder()
         
-        
-        
-        
-        
+        println("tappped")
     }
     
     @IBAction func addPopover(sender: UIBarButtonItem){
@@ -99,7 +119,7 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
             locationManager.requestAlwaysAuthorization()
             break
             
-        case .Authorized:
+        case .AuthorizedAlways:
             self.locationManager.startUpdatingLocation()
             break
             
@@ -115,12 +135,64 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        if PFUser.currentUser() == nil
+        {
+            self.category.hidden = true
+            self.category.enabled = false
+            
+            self.descr.hidden = true
+            
+            self.zip.hidden = true
+            self.zip.enabled = false
+            
+            self.street.hidden = true
+            self.street.enabled = false
+            
+            self.locationType.hidden = true
+            self.locationType.enabled = false
+            
+            self.zipLabel.hidden = true
+            self.streetLabel.hidden = true
+            self.ortLabel.hidden = true
+            self.categoryLabel.hidden = true
+            self.descriptionLabel.hidden = true
+            
+            self.warningLabel.hidden = false
+            
+            self.saveButton.enabled = false
+            self.saveButton.hidden = true
+        }
+        else
+        {
+            self.category.hidden = false
+            self.category.enabled = true
+            
+            self.descr.hidden = false
+            
+            self.zip.hidden = false
+            self.zip.enabled = true
+            
+            self.street.hidden = false
+            self.street.enabled = true
+            
+            self.locationType.hidden = false
+            self.locationType.enabled = true
+            
+            self.zipLabel.hidden = false
+            self.streetLabel.hidden = false
+            self.ortLabel.hidden = false
+            self.categoryLabel.hidden = false
+            self.descriptionLabel.hidden = false
+            
+            self.warningLabel.hidden = true
+            
+            self.saveButton.enabled = true
+            self.saveButton.hidden = false
+        }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
+
 
  
     
@@ -128,12 +200,10 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
     
 
     
-    @IBAction func saveEntry(sender: AnyObject) {
-        
-        print("saveEntry")
-        
-        
-        if locationType.selectedSegmentIndex == 0 {
+    @IBAction func saveEntry(sender: AnyObject)
+    {
+        if locationType.selectedSegmentIndex == 0
+        {
             
             let entry = PFObject(className: "Warnings")
             let lat = self.locationManager.location?.coordinate.latitude
@@ -144,7 +214,8 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
             CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
                 print(location)
                 
-                if error != nil {
+                if error != nil
+                {
                     print("Reverse geocoder failed with error")
                     return
                 }
@@ -186,7 +257,8 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
                     }
   
                 }
-                else {
+                else
+                {
                     print("Problem with the data received from geocoder")
                 }
             })
@@ -205,15 +277,18 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
             let location = street.text! + " " + zip.text!
             CLGeocoder().geocodeAddressString(location, completionHandler: {(placemarks, error) -> Void in
     
-                if((error) != nil){
+                if((error) != nil)
+                {
                     print("Error", error)
                     return
                 }
                     
-                if let pm = placemarks?.first {
+                if let pm = placemarks?.first as? CLPlacemark
+                {
                     
                     let entry = PFObject(className: "Warnings")
                     let coord = pm.location.coordinate
+                    //let coord = pm.location
                     let lat = coord.latitude
                     let long = coord.longitude
                     
@@ -252,20 +327,13 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
                         }
                     }
                 }
-                else {
+                else
+                {
                     print("Problem with the data received from geocoder")
                 }
                 
             })
         }
-        
-        
-        
-        
-        
-        
-        print(entry)
-        
         
     }
     

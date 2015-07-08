@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(application: UIApplication)
     {
-
+        
     }
 
     func applicationWillEnterForeground(application: UIApplication)
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication)
     {
-
+        PFUser.logOut()
     }
 
 

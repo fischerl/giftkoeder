@@ -313,7 +313,6 @@
 				TargetAttributes = {
 					55E298141B2F306E00FAAB41 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = D7AC22HAM8;
 					};
 					55E2982B1B2F306E00FAAB41 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -552,6 +551,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Frameworks",
 				);
 				INFOPLIST_FILE = Giftkoeder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "iosPraktikum.$(PRODUCT_NAME:rfc1034identifier)";
@@ -574,6 +574,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Frameworks",
 				);
 				INFOPLIST_FILE = Giftkoeder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "iosPraktikum.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

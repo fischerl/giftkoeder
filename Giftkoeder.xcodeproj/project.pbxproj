@@ -44,6 +44,7 @@
 		55EDA4641B495B19008BD337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EDA4631B495B19008BD337 /* LoginViewController.swift */; };
 		55EDC6951B30A2CF0023F8C1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55EDC6941B30A2CF0023F8C1 /* libc++.dylib */; };
 		55FEA7951B49B50F00027B38 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551913DD1B2F4C97005FA4B2 /* Parse.framework */; };
+		55FEA7971B4D0CAC00027B38 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEA7961B4D0CAC00027B38 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		55EDA4611B492FC8008BD337 /* ListSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSettingsViewController.swift; sourceTree = "<group>"; };
 		55EDA4631B495B19008BD337 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		55EDC6941B30A2CF0023F8C1 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		55FEA7961B4D0CAC00027B38 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5C1C28A2ACFCFBEE8CFB8309 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C56EB3224F5C3011111480FD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EABBB8000FEB072CFB7ED733 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 				552BAD0D1B39D4460039071A /* ShareViewController.swift */,
 				55EDA4611B492FC8008BD337 /* ListSettingsViewController.swift */,
 				55EDA4631B495B19008BD337 /* LoginViewController.swift */,
+				55FEA7961B4D0CAC00027B38 /* SignUpViewController.swift */,
 			);
 			path = Giftkoeder;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				5515B5961B33F0FB007AEE71 /* Location.swift in Sources */,
 				5515B5A11B346AD3007AEE71 /* LocationCell.swift in Sources */,
 				55EDA4621B492FC8008BD337 /* ListSettingsViewController.swift in Sources */,
+				55FEA7971B4D0CAC00027B38 /* SignUpViewController.swift in Sources */,
 				55E2981D1B2F306E00FAAB41 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

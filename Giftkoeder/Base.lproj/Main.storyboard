@@ -336,7 +336,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-Wp-BV0">
                                                 <rect key="frame" x="20" y="291" width="560" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DogGuard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtb-vs-09Z">
                                                 <rect key="frame" x="240" y="113" width="120" height="36"/>
@@ -448,7 +448,7 @@
         <!--Neues Konto erstellen-->
         <scene sceneID="WJI-63-uav">
             <objects>
-                <viewController id="lh0-2A-YMd" sceneMemberID="viewController">
+                <viewController id="lh0-2A-YMd" customClass="SignUpViewController" customModule="Giftkoeder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="POf-F4-VJ0"/>
                         <viewControllerLayoutGuide type="bottom" id="nAf-Pj-Yxj"/>
@@ -468,6 +468,7 @@
                                                 <state key="normal" title="Anmelden"/>
                                                 <connections>
                                                     <action selector="loginButton:" destination="PJ2-dr-Sk5" eventType="touchUpInside" id="CBX-JJ-9aA"/>
+                                                    <action selector="signUpButton:" destination="PJ2-dr-Sk5" eventType="touchUpInside" id="Osr-Cw-ODn"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ycj-8l-aqM">
@@ -496,7 +497,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eik-Ac-lfi">
                                                 <rect key="frame" x="8" y="286" width="584" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Passwort wiederholen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SK-6C-B4Z">
                                                 <rect key="frame" x="8" y="336" width="214" height="21"/>
@@ -507,7 +508,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvJ-0j-lYk">
                                                 <rect key="frame" x="8" y="365" width="584" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNR-Rn-5wA">
                                                 <rect key="frame" x="8" y="444" width="584" height="30"/>
@@ -569,6 +570,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Neues Konto erstellen" id="Akf-Pj-N9s"/>
+                    <connections>
+                        <outlet property="mail" destination="fNR-Rn-5wA" id="W3J-Cf-jvg"/>
+                        <outlet property="passRepeat" destination="GvJ-0j-lYk" id="hHF-5L-ezA"/>
+                        <outlet property="passwort" destination="Eik-Ac-lfi" id="bZu-h7-jm4"/>
+                        <outlet property="username" destination="ycj-8l-aqM" id="289-v4-7CB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJ2-dr-Sk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -174,17 +174,21 @@ class EntryViewController: UIViewController, CLLocationManagerDelegate, UIPopove
             
             self.descr.hidden = false
             
-            self.zip.hidden = false
-            self.zip.enabled = true
-            
-            self.street.hidden = false
-            self.street.enabled = true
+            if self.locationType.selectedSegmentIndex == 1
+            {
+                self.zip.hidden = false
+                self.zip.enabled = true
+                
+                self.street.hidden = false
+                self.street.enabled = true
+                
+                self.zipLabel.hidden = false
+                self.streetLabel.hidden = false
+            }
             
             self.locationType.hidden = false
             self.locationType.enabled = true
             
-            self.zipLabel.hidden = false
-            self.streetLabel.hidden = false
             self.ortLabel.hidden = false
             self.categoryLabel.hidden = false
             self.descriptionLabel.hidden = false

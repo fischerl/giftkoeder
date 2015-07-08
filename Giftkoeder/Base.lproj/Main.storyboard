@@ -350,8 +350,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Noch kein Konto?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-AY-o1c">
-                                                <rect key="frame" x="20" y="460" width="135" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Noch kein Konto?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-AY-o1c">
+                                                <rect key="frame" x="20" y="408" width="135" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -390,8 +390,8 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchIconSmall-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Se-hY-XPr">
                                                 <rect key="frame" x="250" y="5" width="100" height="100"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-yZ-WTd">
-                                                <rect key="frame" x="20" y="481" width="186" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-yZ-WTd">
+                                                <rect key="frame" x="20" y="431" width="186" height="30"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Neues Konto erstellen"/>
                                                 <connections>
@@ -407,6 +407,7 @@
                                             <constraint firstItem="J55-h6-QrC" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="AFW-J8-Vii"/>
                                             <constraint firstItem="Jtb-vs-09Z" firstAttribute="top" secondItem="8Se-hY-XPr" secondAttribute="bottom" constant="8" id="AQF-X0-obE"/>
                                             <constraint firstAttribute="trailing" secondItem="XUC-Wp-BV0" secondAttribute="trailing" constant="20" id="G4q-nT-Ca3"/>
+                                            <constraint firstItem="jF2-AY-o1c" firstAttribute="top" secondItem="fJ3-ca-Kro" secondAttribute="bottom" constant="26" id="G8S-t4-KIf"/>
                                             <constraint firstItem="xHo-v6-Kcx" firstAttribute="leading" secondItem="kYz-fb-BX5" secondAttribute="leading" constant="20" id="GCz-BD-InD"/>
                                             <constraint firstItem="iTg-gV-rbK" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="JeY-Jz-fbN"/>
                                             <constraint firstItem="TFJ-El-4NZ" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="Kk4-hs-TYy"/>
@@ -422,7 +423,7 @@
                                             <constraint firstAttribute="centerX" secondItem="fJ3-ca-Kro" secondAttribute="centerX" constant="-0.5" id="hRZ-YF-due"/>
                                             <constraint firstItem="iTg-gV-rbK" firstAttribute="top" secondItem="xHo-v6-Kcx" secondAttribute="bottom" constant="26" id="lW4-MF-lMJ"/>
                                             <constraint firstItem="TFJ-El-4NZ" firstAttribute="top" secondItem="Jtb-vs-09Z" secondAttribute="bottom" constant="29" id="oka-pO-wtm"/>
-                                            <constraint firstItem="Jtb-vs-09Z" firstAttribute="top" secondItem="kYz-fb-BX5" secondAttribute="top" constant="80" id="rgJ-1c-Xy2"/>
+                                            <constraint firstItem="Jtb-vs-09Z" firstAttribute="top" secondItem="kYz-fb-BX5" secondAttribute="top" constant="130" id="rgJ-1c-Xy2"/>
                                             <constraint firstItem="V0j-JH-CBQ" firstAttribute="leading" secondItem="kYz-fb-BX5" secondAttribute="leading" constant="20" id="u0B-3u-wGD"/>
                                             <constraint firstItem="zMz-yZ-WTd" firstAttribute="top" secondItem="jF2-AY-o1c" secondAttribute="bottom" constant="1" id="vQb-EI-tIm"/>
                                             <constraint firstItem="xHo-v6-Kcx" firstAttribute="top" secondItem="TFJ-El-4NZ" secondAttribute="bottom" constant="8" id="xm9-X8-9gw"/>

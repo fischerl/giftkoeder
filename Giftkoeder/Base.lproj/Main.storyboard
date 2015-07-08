@@ -39,6 +39,13 @@
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -322,13 +329,13 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-El-4NZ">
                                                 <rect key="frame" x="261" y="178" width="79" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Passwort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTg-gV-rbK">
                                                 <rect key="frame" x="265" y="263" width="71" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -339,20 +346,13 @@
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DogGuard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtb-vs-09Z">
                                                 <rect key="frame" x="240" y="113" width="120" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-yZ-WTd">
-                                                <rect key="frame" x="20" y="482" width="151" height="30"/>
-                                                <state key="normal" title="Neues Konto erstellen"/>
-                                                <connections>
-                                                    <segue destination="lh0-2A-YMd" kind="push" id="mzw-uW-SOF"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Noch kein Konto?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-AY-o1c">
                                                 <rect key="frame" x="20" y="460" width="135" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -367,18 +367,35 @@
                                                 <color key="textColor" red="0.0039215686269999999" green="0.7843137255" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J55-h6-QrC">
-                                                <rect key="frame" x="281" y="352" width="38" height="30"/>
-                                                <state key="normal" title="Login"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J55-h6-QrC">
+                                                <rect key="frame" x="229" y="352" width="128" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="loginButton:" destination="OqW-eJ-OyI" eventType="touchUpInside" id="prr-3W-LlP"/>
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ3-ca-Kro">
-                                                <rect key="frame" x="276" y="352" width="49" height="30"/>
-                                                <state key="normal" title="Logout"/>
+                                                <rect key="frame" x="250" y="352" width="86" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Logout">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="logoutButton:" destination="OqW-eJ-OyI" eventType="touchUpInside" id="aer-RM-rgv"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchIconSmall-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Se-hY-XPr">
+                                                <rect key="frame" x="250" y="5" width="100" height="100"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-yZ-WTd">
+                                                <rect key="frame" x="20" y="481" width="186" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Neues Konto erstellen"/>
+                                                <connections>
+                                                    <segue destination="lh0-2A-YMd" kind="push" id="mzw-uW-SOF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -388,6 +405,7 @@
                                             <constraint firstItem="J55-h6-QrC" firstAttribute="top" secondItem="XUC-Wp-BV0" secondAttribute="bottom" constant="31" id="8q2-qN-5ax"/>
                                             <constraint firstItem="Jtb-vs-09Z" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="9WU-SU-i66"/>
                                             <constraint firstItem="J55-h6-QrC" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="AFW-J8-Vii"/>
+                                            <constraint firstItem="Jtb-vs-09Z" firstAttribute="top" secondItem="8Se-hY-XPr" secondAttribute="bottom" constant="8" id="AQF-X0-obE"/>
                                             <constraint firstAttribute="trailing" secondItem="XUC-Wp-BV0" secondAttribute="trailing" constant="20" id="G4q-nT-Ca3"/>
                                             <constraint firstItem="xHo-v6-Kcx" firstAttribute="leading" secondItem="kYz-fb-BX5" secondAttribute="leading" constant="20" id="GCz-BD-InD"/>
                                             <constraint firstItem="iTg-gV-rbK" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="JeY-Jz-fbN"/>
@@ -395,6 +413,7 @@
                                             <constraint firstItem="fJ3-ca-Kro" firstAttribute="top" secondItem="XUC-Wp-BV0" secondAttribute="bottom" constant="31" id="Mfp-x0-Utv"/>
                                             <constraint firstItem="V0j-JH-CBQ" firstAttribute="top" secondItem="kYz-fb-BX5" secondAttribute="top" constant="10" id="PJq-jE-wv0"/>
                                             <constraint firstItem="XUC-Wp-BV0" firstAttribute="centerX" secondItem="kYz-fb-BX5" secondAttribute="centerX" id="QIE-Ux-Ykl"/>
+                                            <constraint firstAttribute="centerX" secondItem="8Se-hY-XPr" secondAttribute="centerX" id="RuV-E0-NDZ"/>
                                             <constraint firstItem="zMz-yZ-WTd" firstAttribute="leading" secondItem="kYz-fb-BX5" secondAttribute="leading" constant="20" id="VCw-PH-ULm"/>
                                             <constraint firstAttribute="trailing" secondItem="V0j-JH-CBQ" secondAttribute="trailing" constant="20" id="cLf-5P-Loh"/>
                                             <constraint firstItem="XUC-Wp-BV0" firstAttribute="leading" secondItem="kYz-fb-BX5" secondAttribute="leading" constant="20" id="da1-Ij-HUV"/>
@@ -403,7 +422,7 @@
                                             <constraint firstAttribute="centerX" secondItem="fJ3-ca-Kro" secondAttribute="centerX" constant="-0.5" id="hRZ-YF-due"/>
                                             <constraint firstItem="iTg-gV-rbK" firstAttribute="top" secondItem="xHo-v6-Kcx" secondAttribute="bottom" constant="26" id="lW4-MF-lMJ"/>
                                             <constraint firstItem="TFJ-El-4NZ" firstAttribute="top" secondItem="Jtb-vs-09Z" secondAttribute="bottom" constant="29" id="oka-pO-wtm"/>
-                                            <constraint firstItem="Jtb-vs-09Z" firstAttribute="top" secondItem="kYz-fb-BX5" secondAttribute="top" constant="40" id="rgJ-1c-Xy2"/>
+                                            <constraint firstItem="Jtb-vs-09Z" firstAttribute="top" secondItem="kYz-fb-BX5" secondAttribute="top" constant="80" id="rgJ-1c-Xy2"/>
                                             <constraint firstItem="V0j-JH-CBQ" firstAttribute="leading" secondItem="kYz-fb-BX5" secondAttribute="leading" constant="20" id="u0B-3u-wGD"/>
                                             <constraint firstItem="zMz-yZ-WTd" firstAttribute="top" secondItem="jF2-AY-o1c" secondAttribute="bottom" constant="1" id="vQb-EI-tIm"/>
                                             <constraint firstItem="xHo-v6-Kcx" firstAttribute="top" secondItem="TFJ-El-4NZ" secondAttribute="bottom" constant="8" id="xm9-X8-9gw"/>
@@ -1191,6 +1210,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="launchIconSmall-1" width="100" height="100"/>
         <image name="list" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
         <image name="plus" width="25" height="25"/>

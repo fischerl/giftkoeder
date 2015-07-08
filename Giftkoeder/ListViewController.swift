@@ -52,7 +52,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 20)!,
+            NSForegroundColorAttributeName: UIColor.whiteColor()
+        ]
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         let latUser = self.locationManager.location?.coordinate.latitude
         let longUser = self.locationManager.location?.coordinate.longitude

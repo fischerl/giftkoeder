@@ -56,6 +56,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 1/255, green: 200/255, blue: 171/255, alpha: 0.8)
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 20)!,
+            NSForegroundColorAttributeName: UIColor.whiteColor()
+        ]
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    }
+    
     func handleTap(recognizer: UITapGestureRecognizer)
     {
         username.resignFirstResponder()
